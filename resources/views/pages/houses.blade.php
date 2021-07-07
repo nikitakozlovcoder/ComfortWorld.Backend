@@ -9,7 +9,7 @@
         <div class="row">
           <div class="span12">
             <div class="centered">
-              <h4 style="color: white;">Дома в управлении <br> Компании ООО "Уютный Мир"</h3>
+              <h4 style="color: white;">Дома в управлении <br> Компании ООО "Уютный Мир"</h4>
               
             </div>
           </div>

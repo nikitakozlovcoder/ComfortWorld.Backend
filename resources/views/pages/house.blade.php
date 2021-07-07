@@ -43,6 +43,7 @@
             <div class="clearfix">
             </div>
             <div class="row">
+
             @if ($house->thumb!='')
               <div class="span6">
                 <!-- start flexslider -->
@@ -59,7 +60,7 @@
                   </ul>
                 </div>
                 <!-- end flexslider -->
-                
+
               </div>
               <div class="span6">
                 <div class="project-widget">
@@ -69,12 +70,23 @@
                     @if(!$house->alive)
                       <li><label>Дата выхода из управления:</label> {{$house->date_out}}</li>
                     @endif
-                    <li><label>Год постройки:</label> {{$house->date_built}}</li>
-                    <li><label>Общая площадь:</label> <span style="white-space: nowrap">{{$house->area_wide}} м<sup>2</sup></span></li>
-                    <li><label>Площадь земельного участка:</label> <span style="white-space: nowrap">{{$house->area_small}} м<sup>2</sup></span></li>     
-                    <li><label>Кадастровый номер земельного участка:</label> {{$house->cad_number}}</li>
-                    <li><label>Материал стен:</label> {{$house->material_wall}}</li>
-                    <li><label>Материал перекрытий:</label> {{$house->material_floor}}</li>
+                    @if($house->date_built != '')
+                      <li><label>Год постройки:</label> {{$house->date_built}}</li>
+                    @endif
+                    @if($house->area_wide != 0)
+                        <li><label>Общая площадь:</label> <span style="white-space: nowrap">{{$house->area_wide}} м<sup>2</sup></span></li>
+                     @endif
+                     @if($house->area_small != 0)
+                        <li><label>Площадь земельного участка:</label> <span style="white-space: nowrap">{{$house->area_small}} м<sup>2</sup></span></li>@endif
+                     @if($house->cad_number != '')
+                        <li><label>Кадастровый номер земельного участка:</label> {{$house->cad_number}}</li>
+                     @endif
+                    @if($house->material_wall != '')
+                        <li><label>Материал стен:</label> {{$house->material_wall}}</li>
+                    @endif
+                    @if($house->material_floor != '')
+                        <li><label>Материал перекрытий:</label> {{$house->material_floor}}</li>
+                    @endif
                    
                   </ul>
                 </div>
@@ -88,33 +100,42 @@
                 <div style="clear: both"></div>           
                 
                @else
-               <div class="span6">
+                <div class="span12">
+                    <div class="project-widget">
+                        <!-- <h4><i class="icon-48 icon-beaker"></i> Info</h4>-->
+                        <ul class="project-detail">
+                            <li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
+                            @if(!$house->alive)
+                            <li><label>Дата выхода из управления:</label> {{$house->date_out}}</li>
+                            @endif
+                            @if($house->date_built != '')
+                            <li><label>Год постройки:</label> {{$house->date_built}}</li>
+                            @endif
+                            @if($house->area_wide != 0)
+                            <li><label>Общая площадь:</label> <span style="white-space: nowrap">{{$house->area_wide}} м<sup>2</sup></span></li>
+                            @endif
+                            @if($house->area_small != 0)
+                            <li><label>Площадь земельного участка:</label> <span style="white-space: nowrap">{{$house->area_small}} м<sup>2</sup></span></li>@endif
+                            @if($house->cad_number != '')
+                            <li><label>Кадастровый номер земельного участка:</label> {{$house->cad_number}}</li>
+                            @endif
+                            @if($house->material_wall != '')
+                            <li><label>Материал стен:</label> {{$house->material_wall}}</li>
+                            @endif
+                            @if($house->material_floor != '')
+                            <li><label>Материал перекрытий:</label> {{$house->material_floor}}</li>
+                            @endif
+
+                        </ul>
+                    </div>
+                </div>
+               <div class="span12">
                 <div class="tiny-text">
                  {!! $house->content !!}
                 </div>
               </div>
-              
                 
-                <div class="span6">
-                <div class="project-widget">
-                 <!-- <h4><i class="icon-48 icon-beaker"></i> Info</h4>-->
-                  <ul class="project-detail">
-                    <li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
-                    @if(!$house->alive)
-                      <li><label>Дата выхода из управления:</label> {{$house->date_out}}</li>
-                    @endif
-                    <li><label>Год постройки:</label> {{$house->date_built}}</li>
-                    <li><label>Общая площадь:</label> <span style="white-space: nowrap">{{$house->area_wide}} м<sup>2</sup></span></li>
-                    <li><label>Площадь земельного участка:</label> <span style="white-space: nowrap">{{$house->area_small}} м<sup>2</sup></span></li>     
-                    <li><label>Кадастровый номер земельного участка:</label> {{$house->cad_number}}</li>
-                    <li><label>Материал стен:</label> {{$house->material_wall}}</li>
-                    <li><label>Материал перекрытий:</label> {{$house->material_floor}}</li>
-                   
-                   
-                  </ul>
-                </div>
-               
-              </div>
+
                
             @endif
             <?php  $imgs_arr = json_decode($house->imgs) ?>

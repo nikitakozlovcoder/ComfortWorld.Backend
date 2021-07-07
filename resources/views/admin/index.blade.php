@@ -14,7 +14,13 @@
   <li><a href="/admin/houses" class="admin-link">Дома</a></li>   
   <li><a href="/admin/contacts" class="admin-link">Контакты</a></li>   
 </ul>
+<br>
+<br>
+<a href="/laravel-filemanager" target="_blank">
+  <button class="btn btn-primary">Файлы</button>
+</a>
 </div>
+
 
 <!--<textarea name="content" id="edit"></textarea>
 <script src="{{asset('tinymce/tinymce.min.js')}}" ></script>

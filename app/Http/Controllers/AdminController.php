@@ -119,8 +119,8 @@ class AdminController extends Controller
 
     public function house_index()
     {
-        $houses_alive = \App\House::orderBy('id', 'DESC')->where('alive', 1)->get();
-        $houses_not_alive = \App\House::orderBy('id', 'DESC')->where('alive', 0)->get();
+        $houses_alive = \App\House::orderBy('title', 'ASC')->where('alive', 1)->get();
+        $houses_not_alive = \App\House::orderBy('title', 'ASC')->where('alive', 0)->get();
         return view('admin.houses_index', ['houses_alive'=> $houses_alive, 'houses_not_alive'=>$houses_not_alive]);
     }
 
@@ -132,6 +132,7 @@ class AdminController extends Controller
 
     public function create_house(Request $request)
     {
+        #dd($request);
         $house = new \App\House();
         $house->title = $this->fallback('title', $request);
         $house->date_in = $this->fallback('date_in', $request);
@@ -142,8 +143,8 @@ class AdminController extends Controller
         $house->alive = $request->has('alive');
         $house->date_built = $this->fallback('date_built', $request);
         $house->cad_number = $this->fallback('cad_number', $request);
-        $house->area_wide = $this->fallback('area_wide', $request);
-        $house->area_small = $this->fallback('area_small', $request);
+        $house->area_wide = $this->fallback('area_wide', $request, 0);
+        $house->area_small = $this->fallback('area_small', $request, 0);
         $house->material_wall = $this->fallback('material_wall', $request);
         $house->material_floor = $this->fallback('material_floor', $request);
         $house->save();
@@ -168,8 +169,8 @@ class AdminController extends Controller
         $house->alive = $request->has('alive');
         $house->date_built = $this->fallback('date_built', $request);
         $house->cad_number = $this->fallback('cad_number', $request);
-        $house->area_wide = $this->fallback('area_wide', $request);
-        $house->area_small = $this->fallback('area_small', $request);
+        $house->area_wide = $this->fallback('area_wide', $request, null);
+        $house->area_small = $this->fallback('area_small', $request, null);
         $house->material_wall = $this->fallback('material_wall', $request);
         $house->material_floor = $this->fallback('material_floor', $request);
         $house->save();

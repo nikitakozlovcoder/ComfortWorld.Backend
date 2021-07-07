@@ -29,8 +29,8 @@ class PagesController extends Controller
     }
     public function houses()
     {
-        $houses_alive = \App\House::orderBy('id', 'DESC')->where('alive', 1)->get();
-        $houses_not_alive = \App\House::orderBy('id', 'DESC')->where('alive', 0)->get();
+        $houses_alive = \App\House::orderBy('title', 'ASC')->where('alive', 1)->get();
+        $houses_not_alive = \App\House::orderBy('title', 'ASC')->where('alive', 0)->get();
         return view('pages.houses', ['houses_alive'=> $houses_alive, 'houses_not_alive'=>$houses_not_alive]);
     }
 

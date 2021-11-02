@@ -3,7 +3,7 @@
 
 @section('content')
 <main style="margin-top: 100px;">
-<section id="subintro">
+<!--<section id="subintro">
     <div class="jumbotron subhead" id="overview">
       <div class="container">
         <div class="row">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
   <section id="breadcrumb">
     <div class="container">
       <div class="row">

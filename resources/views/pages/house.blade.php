@@ -66,10 +66,10 @@
                 <div class="project-widget">
                  <!-- <h4><i class="icon-48 icon-beaker"></i> Info</h4>-->
                   <ul class="project-detail">
-                    <li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
+                    {{--<li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
                     @if(!$house->alive)
                       <li><label>Дата выхода из управления:</label> {{$house->date_out}}</li>
-                    @endif
+                    @endif--}}
                     @if($house->date_built != '')
                       <li><label>Год постройки:</label> {{$house->date_built}}</li>
                     @endif
@@ -104,10 +104,10 @@
                     <div class="project-widget">
                         <!-- <h4><i class="icon-48 icon-beaker"></i> Info</h4>-->
                         <ul class="project-detail">
-                            <li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
+                           {{-- <li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
                             @if(!$house->alive)
                             <li><label>Дата выхода из управления:</label> {{$house->date_out}}</li>
-                            @endif
+                            @endif--}}
                             @if($house->date_built != '')
                             <li><label>Год постройки:</label> {{$house->date_built}}</li>
                             @endif
@@ -134,9 +134,9 @@
                  {!! $house->content !!}
                 </div>
               </div>
-                
 
-               
+
+
             @endif
             <?php  $imgs_arr = json_decode($house->imgs) ?>
             @if(count($imgs_arr))
@@ -146,23 +146,23 @@
               <h2>Галерея</h2>
                <hr>
             </div>
-           
+
               <br>
             <div class="span12">
-                <div class="owl-carousel">  
+                <div class="owl-carousel">
                     @foreach($imgs_arr as $imurl)
-                      
-                   
+
+
                     <div class="item-house"><a href="{{$imurl}}" target="_blank"><img src="{{$imurl}}" alt="" /></a></div>
                      @endforeach
                 </div>
-                
+
               </div>
 
             </div>
             @endif
 
-           
+
           </article>
           <!-- end article full post -->
         </div>
@@ -172,7 +172,7 @@
   </main>
 
   <script>
-  
+
   $(document).ready(function(){
   $('.owl-carousel').owlCarousel({
       loop: {{count($imgs_arr)>9? 'true' : 'false'}},
@@ -191,6 +191,6 @@
       }
     })
   })
-  
+
    </script>
   @endsection

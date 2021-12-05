@@ -36,7 +36,7 @@
     <tr>
       <th scope="col" class="col-fit">#</th>
       <th scope="col" class="col-min">Адрес</th>
-      <th scope="col" class="col-fit" style="white-space: initial;"> <span style="white-space: nowrap;">Дата начала</span> управления</th>
+      {{--<th scope="col" class="col-fit" style="white-space: initial;"> <span style="white-space: nowrap;">Дата начала</span> управления</th>--}}
     </tr>
   </thead>
   <tbody>
@@ -44,7 +44,7 @@
     <tr>
       <th scope="row" class="col-fit">{{$ka+1}}</th>
       <td class="col-min"><a href="/house/{{$ha->id}}">{{$ha->title}}</a></td>
-      <td class="col-fit">{{$ha->date_in}}</td>
+     {{--<td class="col-fit">{{$ha->date_in}}</td> --}}
     </tr>
   @endforeach   
   </tbody>
@@ -61,8 +61,8 @@
     <tr>
       <th scope="col" class="col-fit">#</th>
       <th scope="col" class="col-min">Адрес</th>
-      <th scope="col" class="col-fit" style="white-space: initial;"> <span style="white-space: nowrap;">Дата прекращения</span> управления</th>
-      <th scope="col" class="col-fit" style="white-space: initial;"><span style="white-space: nowrap;">Дата начала</span> управления</th>
+    {{--<th scope="col" class="col-fit" style="white-space: initial;"> <span style="white-space: nowrap;">Дата прекращения</span> управления</th>
+      <th scope="col" class="col-fit" style="white-space: initial;"><span style="white-space: nowrap;">Дата начала</span> управления</th>--}}
     </tr>
   </thead>
   <tbody>
@@ -70,8 +70,8 @@
     <tr>
       <th scope="row" class="col-fit">{{$kn+1}}</th>
       <td class="col-min"><a href="/house/{{$hn->id}}">{{$hn->title}}</a></td>
-      <td class="col-fit">{{$hn->date_in}}</td>
-      <td class="col-fit">{{$hn->date_out}}</td>
+      {{--<td class="col-fit">{{$hn->date_in}}</td>
+      <td class="col-fit">{{$hn->date_out}}</td> --}}
     </tr>
     
   @endforeach   
